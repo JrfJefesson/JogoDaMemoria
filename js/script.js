@@ -33,6 +33,7 @@ function iniciarJogo() {
     }
 
     document.getElementById('nome-jogador').textContent = "Jogador: " + nomeJogador;
+    document.getElementById('nome-jogador').style.display = 'block';
 
     document.getElementById('principal').style.display = 'none';
 
@@ -275,7 +276,9 @@ function reiniciarJogo() {
     if (document.getElementById('game-pc')) {
         document.getElementById('game-pc').style.display = 'none';
     }
-
+    if (document.getElementById('nome-jogador')) {
+        document.getElementById('nome-jogador').style.display = 'none';
+    }
 
     // Mostra a tela inicial novamente
     if (document.getElementById('principal')) {

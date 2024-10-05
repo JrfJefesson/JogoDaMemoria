@@ -1,7 +1,7 @@
 # JogoDaMemoria
 # Autores
 - Jéferson Ramos Fonseca
-- Matheus Jorge
+- Matheus Jorge Miranda Peixoto
 
 # O que é o jogo?
 -	O jogo da memória consiste em iniciar com todas as cartas viradas para baixo, sendo 2 das cartas pertencentes ao mesmo clube do futebol brasileiro, logo é preciso que o jogador consiga encontrar todos os pares de cada clube de futebol, tendo como objetivo final encontrar todos os pares dentro do tempo estipulado, no qual os jogadores que encontrarem todos os pares no menor tempo estarão mais alto na tabela de ranking.
