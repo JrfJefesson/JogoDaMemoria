@@ -1,0 +1,189 @@
+body {
+    background-color: black;
+}
+#titulo {
+    color: greenyellow;
+    font-size: 80px;
+}
+
+/* CSS do botão Jogar */
+.btn {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 15px 40px;
+    text-align: center;
+    border-radius: 25px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.btn:hover {
+    color: greenyellow; 
+    transform: scale(1.05); 
+    box-shadow: 0 0 25px greenyellow; 
+}
+
+#titulo {
+    font-family: 'Impact', sans-serif;
+}
+
+#nivel {
+    color: greenyellow;
+}
+
+#principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* CSS da opção da dificuldade de jogo */
+#opcao {
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px 15px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+}
+
+#titulo1 {
+    color: greenyellow;
+}
+
+/* CSS das cartas modo fácil */
+.memory-game {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    max-width: 800px; 
+    margin: auto; 
+}
+
+/* CSS das cartas modo fácil */
+.carta {
+    position: relative; 
+    width: 100px; 
+    height: 140px; 
+    margin: 10px; 
+    cursor: pointer;
+}
+
+.carta img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: transform 0.5s;
+    backface-visibility: hidden; 
+}
+
+.carta .verso {
+    transform: rotateY(0deg); 
+}
+
+.carta .frente {
+    transform: rotateY(180deg); 
+}
+
+/* Quando a carta é virada */
+.carta.virada .frente {
+    transform: rotateY(0deg); 
+}
+
+.carta.virada .verso {
+    transform: rotateY(180deg); 
+}
+
+/* CSS do nome do jogador */
+#nome-jogador {
+    color: greenyellow; 
+    font-size: 24px;    
+    font-weight: bold;   
+    text-align: center;  
+}
+
+/* CSS dos cronometros */
+#cronometro, #cronometro-dificil {
+    color: greenyellow; 
+    font-size: 24px;   
+    text-align: center; 
+    margin-top: 20px;  
+}
+
+/* CSS do tabuleiro modo dificil */
+.memory-game-dificil {
+    display: grid; 
+    grid-template-columns: repeat(7, 1fr); 
+    gap: 10px; 
+    max-width: 1000px; 
+    margin: auto; 
+}
+
+/* CSS das cartas modo dificil */
+.carta-dificil {
+    position: relative; 
+    width: 100px; 
+    height: 140px; 
+    perspective: 1000px; 
+    cursor: pointer;
+}
+
+.carta-dificil img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: transform 0.5s; 
+    backface-visibility: hidden; 
+}
+
+.carta-dificil .verso-dificil {
+    transform: rotateY(0deg); 
+}
+
+.carta-dificil .frente-dificil {
+    transform: rotateY(180deg); 
+}
+
+.carta-dificil.virada .frente-dificil {
+    transform: rotateY(0deg); 
+}
+
+.carta-dificil.virada .verso-dificil {
+    transform: rotateY(180deg); 
+}
+
+/* CSS do Rank*/
+#ranking-container {
+    position: absolute; 
+    top: 50px; 
+    right: 20px; 
+    background-color: rgba(0, 0, 0, 0.7); 
+    padding: 10px;
+    border-radius: 8px; 
+    color: white; 
+}
+
+#ranking-list {
+    list-style-type: none; 
+    padding: 0; 
+}
+
+#ranking-list li {
+    color: greenyellow; 
+    margin: 5px 0;
+}
+
+#rank-titulo {
+    color: greenyellow;
+}
+
+#ranking-container {
+    display: none; 
+}

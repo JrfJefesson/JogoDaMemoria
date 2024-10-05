@@ -1,0 +1,258 @@
+<!DOCTYPE>
+<html lang = "pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>Jogo da memória</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="js/script.js"></script>
+    </head>
+        
+    <body>
+
+        <!-- Função que irá dar a opção de escolha de modo de jogo -->
+        <div id = "principal">
+            <h1 id = "titulo">Jogo da memória</h1>
+            <form>
+                <h2 id="nivel">Dificuldade do jogo:</h2>
+                <select id="opcao">
+                    <option value="7p"selected>Modo Fácil</option>
+                    <option value="14p">Modo Difícil</option>
+                </select>
+                <br><br>
+                <input class="btn" type="button" value="Jogar" onclick="iniciarJogo()"/>
+            </form>
+        </div>
+
+        <!-- Função que irá atualizar o rank -->
+        <div id="ranking-container">
+            <h2 id ="rank-titulo">Ranking</h2>
+            <ul id="ranking-list">
+            </ul>
+        </div>
+
+        <!-- Div que irá mostrar o nome do jogador -->
+        <div id="nome-jogador"></div>
+
+        <!-- Tabuleiro do jogo modo fácil 7 pares -->
+        <div class = "tabuleiro" id="game-facil" style="display:none;">
+            
+            <div id="cronometro"></div>
+            <br>
+            <!-- Cartas do tabuleiro do jogo modo fácil -->
+            <section class="memory-game">
+                
+                <div class="carta" data-framework="atleticomg">
+                    <img class="frente" src="images/AtleticoMG.png" alt="Atlético MG" />
+                    <img class="verso" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+
+                <div class="carta" data-framework="cruzeiro">
+                    <img class="frente" src="images/Cruzeiro.png" alt="Cruzeiro" />
+                    <img class="verso" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+                
+                
+                <div class="carta" data-framework="atleticopr">
+                    <img class="frente" src="images/AtleticoPR.png" alt="Atlético PR" />
+                    <img class="verso" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+
+                <div class="carta" data-framework="atleticopr">
+                    <img class="frente" src="images/AtleticoPR.png" alt="Atlético PR" />
+                    <img class="verso" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+
+                <div class="carta" data-framework="bahia">
+                    <img class="frente" src="images/Bahia.png" alt="Bahia" />
+                    <img class="verso" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+
+                <div class="carta" data-framework="botafogo">
+                    <img class="frente" src="images/Botafogo.png" alt="Botafogo" />
+                    <img class="verso" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+
+                <div class="carta" data-framework="bahia">
+                    <img class="frente" src="images/Bahia.png" alt="Bahia" />
+                    <img class="verso" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+
+                <div class="carta" data-framework="botafogo">
+                    <img class="frente" src="images/Botafogo.png" alt="Botafogo" />
+                    <img class="verso" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+
+                <div class="carta" data-framework="corinthians">
+                    <img class="frente" src="images/Corinthians.png" alt="Corinthians" />
+                    <img class="verso" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+
+                <div class="carta" data-framework="flamengo">
+                    <img class="frente" src="images/Flamengo.png" alt="Flamengo" />
+                    <img class="verso" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+
+                <div class="carta" data-framework="corinthians">
+                    <img class="frente" src="images/Corinthians.png" alt="Corinthians" />
+                    <img class="verso" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+                
+                <div class="carta" data-framework="flamengo">
+                    <img class="frente" src="images/Flamengo.png" alt="Flamengo" />
+                    <img class="verso" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+
+                <div class="carta" data-framework="cruzeiro">
+                    <img class="frente" src="images/Cruzeiro.png" alt="Cruzeiro" />
+                    <img class="verso" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+                
+                <div class="carta" data-framework="atleticomg">
+                    <img class="frente" src="images/AtleticoMG.png" alt="Atlético MG" />
+                    <img class="verso" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+                
+            </section>
+            
+        </div>
+
+        <!-- Tabuleiro do jogo modo dificil 14 pares -->
+        <div class = "tabuleiroDificil" id="game-dificil" style="display:none;">
+            
+            <div id="cronometro-dificil"></div>
+            <br><br>
+            
+            <!-- Cartas do tabuleiro do jogo modo dificil -->
+            <section class="memory-game-dificil">
+                
+                <div class="carta-dificil" data-framework="atleticomg-dificil">
+                    <img class="frente-dificil" src="images/AtleticoMG.png" alt="Atlético MG" />
+                    <img class="verso-dificil" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+                <div class="carta-dificil" data-framework="atleticomg-dificil">
+                        <img class="frente-dificil" src="images/AtleticoMG.png" alt="Atlético MG" />
+                        <img class="verso-dificil" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+
+                <div class="carta-dificil" data-framework="atleticopr-dificil">
+                    <img class="frente-dificil" src="images/AtleticoPR.png" alt="Atlético PR" />
+                    <img class="verso-dificil" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+                <div class="carta-dificil" data-framework="atleticopr-dificil">
+                    <img class="frente-dificil" src="images/AtleticoPR.png" alt="Atlético PR" />
+                    <img class="verso-dificil" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+
+                <div class="carta-dificil" data-framework="bahia-dificil">
+                    <img class="frente-dificil" src="images/Bahia.png" alt="Bahia" />
+                    <img class="verso-dificil" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+                <div class="carta-dificil" data-framework="bahia-dificil">
+                    <img class="frente-dificil" src="images/Bahia.png" alt="Bahia" />
+                    <img class="verso-dificil" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+
+                <div class="carta-dificil" data-framework="botafogo-dificil">
+                    <img class="frente-dificil" src="images/Botafogo.png" alt="Botafogo" />
+                    <img class="verso-dificil" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+                <div class="carta-dificil" data-framework="botafogo-dificil">
+                    <img class="frente-dificil" src="images/Botafogo.png" alt="Botafogo" />
+                    <img class="verso-dificil" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+
+                <div class="carta-dificil" data-framework="corinthians-dificil">
+                    <img class="frente-dificil" src="images/Corinthians.png" alt="Corinthians" />
+                    <img class="verso-dificil" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+                <div class="carta-dificil" data-framework="corinthians-dificil">
+                    <img class="frente-dificil" src="images/Corinthians.png" alt="Corinthians" />
+                    <img class="verso-dificil" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+
+                <div class="carta-dificil" data-framework="cruzeiro-dificil">
+                    <img class="frente-dificil" src="images/Cruzeiro.png" alt="Cruzeiro" />
+                    <img class="verso-dificil" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+                <div class="carta-dificil" data-framework="cruzeiro-dificil">
+                    <img class="frente-dificil" src="images/Cruzeiro.png" alt="Cruzeiro" />
+                    <img class="verso-dificil" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+
+                <div class="carta-dificil" data-framework="flamengo-dificil">
+                    <img class="frente-dificil" src="images/Flamengo.png" alt="Flamengo" />
+                    <img class="verso-dificil" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+                <div class="carta-dificil" data-framework="flamengo-dificil">
+                    <img class="frente-dificil" src="images/Flamengo.png" alt="Flamengo" />
+                    <img class="verso-dificil" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+
+                <div class="carta-dificil" data-framework="fluminense-dificil">
+                    <img class="frente-dificil" src="images/Fluminense.png" alt="Fluminense" />
+                    <img class="verso-dificil" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+                <div class="carta-dificil" data-framework="fluminense-dificil"><
+                    <img class="frente-dificil" src="images/Fluminense.png" alt="Fluminense" />
+                    <img class="verso-dificil" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+
+                <div class="carta-dificil" data-framework="fortaleza-dificil">
+                    <img class="frente-dificil" src="images/Fortaleza.png" alt="Fortaleza" />
+                    <img class="verso-dificil" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+                <div class="carta-dificil" data-framework="fortaleza-dificil">
+                    <img class="frente-dificil" src="images/Fortaleza.png" alt="Fortaleza" />
+                    <img class="verso-dificil" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+
+                <div class="carta-dificil" data-framework="gremio-dificil">
+                    <img class="frente-dificil" src="images/Gremio.png" alt="Gremio" />
+                    <img class="verso-dificil" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+                <div class="carta-dificil" data-framework="gremio-dificil">
+                    <img class="frente-dificil" src="images/Gremio.png" alt="Gremio" />
+                    <img class="verso-dificil" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+
+                <div class="carta-dificil" data-framework="internacional-dificil">
+                    <img class="frente-dificil" src="images/Internacional.png" alt="Internacional" />
+                    <img class="verso-dificil" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+                <div class="carta-dificil" data-framework="internacional-dificil">
+                    <img class="frente-dificil" src="images/Internacional.png" alt="Internacional" />
+                    <img class="verso-dificil" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+
+                <div class="carta-dificil" data-framework="palmeiras-dificil">
+                    <img class="frente-dificil" src="images/Palmeiras.png" alt="Palmeiras" />
+                    <img class="verso-dificil" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+                <div class="carta-dificil" data-framework="palmeiras-dificil">
+                    <img class="frente-dificil" src="images/Palmeiras.png" alt="Palmeiras" />
+                    <img class="verso-dificil" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+
+                <div class="carta-dificil" data-framework="saopaulo-dificil">
+                    <img class="frente-dificil" src="images/Sao Paulo.png" alt="São Paulo" />
+                    <img class="verso-dificil" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+                <div class="carta-dificil" data-framework="saopaulo-dificil">
+                    <img class="frente-dificil" src="images/Sao Paulo.png" alt="São Paulo" />
+                    <img class="verso-dificil" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+
+                <div class="carta-dificil" data-framework="vasco-dificil">
+                    <img class="frente-dificil" src="images/Vasco.png" alt="Vasco"/>
+                    <img class="verso-dificil" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+                <div class="carta-dificil" data-framework="vasco-dificil">
+                    <img class="frente-dificil" src="images/Vasco.png" alt="Vasco"/>
+                    <img class="verso-dificil" src="images/Capa.jpeg" alt="Verso da carta" />
+                </div>
+
+            </section>
+        </div>
+
+    </body>
+</html>
